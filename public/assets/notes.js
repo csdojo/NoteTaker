@@ -48,19 +48,45 @@ var renderNoteList = function(notes) {
   for (var i = 0; i < notes.length; i++) {
     var note = notes[i];
 
+    var titleHere = note.title
+
+    var titleLower = titleHere.toLowerCase()
+
+    var emojiEat = titleLower.includes("lunch") || titleLower.includes("dinner") || titleLower.includes("eat");
+
+
+    if (emojiEat) {
+
+    var $li = $("<li class='list-group-item'>").data(note);
+    var $titleDiv = $("<div>");
+    var $titleSpan = $("<span class='font-weight-bold'>").text(note.title);
+    var $titleEmoji = $("<span role='img' aria-label='memo'>🍜</span>")
+    var $delBtn = $(
+      "<i class='fas fa-trash-alt float-right text-danger delete-note'>"
+    );
+    var $noteP = $("<p class='mt-2'>").text(note.text);
+
+    $titleDiv.append( $titleEmoji,$titleSpan, $delBtn);
+
+    $li.append($titleDiv, $noteP);
+    noteListItems.push($li);
+
+  }
+  
+  else{
     var $li = $("<li class='list-group-item'>").data(note);
     var $titleDiv = $("<div>");
     var $titleSpan = $("<span class='font-weight-bold'>").text(note.title);
     var $delBtn = $(
       "<i class='fas fa-trash-alt float-right text-danger delete-note'>"
     );
-
     var $noteP = $("<p class='mt-2'>").text(note.text);
 
-    $titleDiv.append($titleSpan, $delBtn);
+    $titleDiv.append($titleSpan,$delBtn);
 
     $li.append($titleDiv, $noteP);
     noteListItems.push($li);
+  }
   }
 
   $noteList.append(noteListItems);
