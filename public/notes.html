@@ -6,47 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
     <title>Notes</title>
+    <style>
+
+        i {
+  cursor: pointer;
+}
+    </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-light bg-dark">
-        <a style="padding:20px; color:white" class="navbar-brand" href="/">Note Taker</a>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Note Taker
+        </a>
     </nav>
-
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <form style="margin-top:50px;border: 1px solid #e3e3e3;font-size: 20px;" class="col-5 mx-auto">
-                <div style="padding:10px;" class="form-group">
-                    <label for="title">Save a Note</label>
-                    <input type="email" class="form-control" id="title" placeholder="Note Title">
+            <div class="col-md-6 offset-md-3 list-container">
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Save a Note</h5>
+                        <div class="form-group">
+                            <input type="text" class="form-control note-title" placeholder="Note Title">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control note-textarea" placeholder="Enter Note Text" rows="3"></textarea>
+                            <button class="btn btn-success mt-4 float-right save-note">Save Note</button>
+                        </div>
+                    </div>
                 </div>
-                <div style="padding:10px;font-size: 18px;" class="form-group">
-                    <textarea class="form-control" id="content" rows="3" placeholder="Enter Note Text"></textarea>
+                <div class="card mt-4">
+                    <ul class="list-group">
+                    </ul>
                 </div>
-                <button class="btn btn-success mb-3 mr-2 float-right submit">Save Note</button>
-            </form>
-        </div>
-        <div class="row">
-            <div style="padding-right:0px;padding-left:0px;" class="card mt-4 col-5 mx-auto">
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <p>do your homework</p>
-                    </li>
-                    <li class="list-group-item">
-                        <p>do your homework</p>
-                    </li>
-                </ul>
             </div>
         </div>
     </div>
-
-
-
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <script src="assets/input.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/notes.js"></script>
 </body>
 
 </html>
