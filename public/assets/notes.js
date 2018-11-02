@@ -54,7 +54,7 @@ var renderNoteList = function(notes) {
 
     var emojiEat = titleLower.includes("lunch") || titleLower.includes("dinner") || titleLower.includes("eat");
 
-    var emojiTraf = titleLower.includes("travel") || titleLower.includes("airport") || titleLower.includes("meet");
+    var emojiTraf = titleLower.includes("travel") || titleLower.includes("airport") || titleLower.includes("meet")|| titleLower.includes("taxi");
 
     if (emojiEat) {
 
