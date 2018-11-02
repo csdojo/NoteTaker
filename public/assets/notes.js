@@ -54,6 +54,7 @@ var renderNoteList = function(notes) {
 
     var emojiEat = titleLower.includes("lunch") || titleLower.includes("dinner") || titleLower.includes("eat");
 
+    var emojiTraf = titleLower.includes("travel") || titleLower.includes("airport") || titleLower.includes("meet");
 
     if (emojiEat) {
 
@@ -71,9 +72,25 @@ var renderNoteList = function(notes) {
     $li.append($titleDiv, $noteP);
     noteListItems.push($li);
 
+  } else if (emojiTraf){
+    var $li = $("<li class='list-group-item'>").data(note);
+    var $titleDiv = $("<div>");
+    var $titleSpan = $("<span class='font-weight-bold'>").text(note.title);
+    var $titleEmoji = $("<span role='img' aria-label='memo'>🚗</span>")
+    var $delBtn = $(
+      "<i class='fas fa-trash-alt float-right text-danger delete-note'>"
+    );
+    var $noteP = $("<p class='mt-2'>").text(note.text);
+
+    $titleDiv.append( $titleEmoji,$titleSpan, $delBtn);
+
+    $li.append($titleDiv, $noteP);
+    noteListItems.push($li);
+
   }
   
   else{
+
     var $li = $("<li class='list-group-item'>").data(note);
     var $titleDiv = $("<div>");
     var $titleSpan = $("<span class='font-weight-bold'>").text(note.title);
